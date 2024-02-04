@@ -1,9 +1,10 @@
-
+# Stage 1: Build the Maven project
 FROM maven:3.8.5-openjdk-17 AS build
-COPY . /app
-WORKDIR /app
+WORKDIR /app  # Set the working directory to /app
+COPY . .      # Copy the entire project to /app
 RUN mvn clean package -DskipTests
 
+# Stage 2: Create the final image
 FROM openjdk:17-jdk-slim
 COPY --from=build /app/target/SweetTooth-0.0.1-SNAPSHOT.jar /app/SweetTooth.jar
 EXPOSE 8080
