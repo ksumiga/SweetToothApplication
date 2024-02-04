@@ -1,7 +1,7 @@
-# Stage 1: Build the Maven project
+
 FROM maven:3.8.5-openjdk-17 AS build
-WORKDIR /app  # Set the working directory to /app
-COPY . .      # Copy the entire project to /app
+WORKDIR /com  
+COPY . .      
 RUN mvn clean package -DskipTests
 
 # Stage 2: Create the final image
