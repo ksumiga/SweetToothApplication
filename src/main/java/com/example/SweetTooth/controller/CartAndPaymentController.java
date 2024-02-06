@@ -140,6 +140,7 @@ public class CartAndPaymentController {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String username = null;
 
+        // Getting logged in username which is email address in this instance for creating purchase history 
         if (authentication.getPrincipal() instanceof UserDetails) {
             UserDetails userDetails = (UserDetails) authentication.getPrincipal();
             username = userDetails.getUsername();
@@ -150,7 +151,7 @@ public class CartAndPaymentController {
             
         } else {
             username = "Guest";
-        }
+        }                                
 
         Payment payment = paypalService.executePayment(paymentId, payerId);
 
