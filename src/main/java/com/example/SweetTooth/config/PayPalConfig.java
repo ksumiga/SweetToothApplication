@@ -14,10 +14,10 @@ import com.paypal.base.rest.PayPalRESTException;
 @Configuration
 public class PayPalConfig {
 
-    @Value("Your OAuth API key")
+    @Value("Your Pay Pal API key")
     private String clientId;
     
-    @Value("Your OAuht Secret")
+    @Value("Your Pay Pal Secret")
     private String clientSecret;
       
     @Value("sandbox")
