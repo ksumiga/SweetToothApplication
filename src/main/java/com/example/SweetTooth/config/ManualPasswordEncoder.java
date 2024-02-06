@@ -14,7 +14,7 @@ public class ManualPasswordEncoder {
  
      public static void main(String[] args) {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-        String rawPassword = "1234";
+        String rawPassword = "some password";
         String encodedPassword = encoder.encode(rawPassword);
 
         System.out.println("Raw Password: " + rawPassword);
