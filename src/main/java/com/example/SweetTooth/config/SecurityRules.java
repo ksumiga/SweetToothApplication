@@ -97,8 +97,8 @@ public class SecurityRules extends SecurityConfigurerAdapter{
     
     private ClientRegistration googleClientRegistration() {
 		return ClientRegistration.withRegistrationId("google")
-			.clientId("852705850887-29rslp2230ec212132qlvhap9hgkjkik.apps.googleusercontent.com")
-			.clientSecret("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")
+			.clientId("Your OAuht Client ID")
+			.clientSecret("Your OAuth Secret")
 			.clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
 			.authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
 			.redirectUri("{baseUrl}/login/oauth2/code/{registrationId}")
