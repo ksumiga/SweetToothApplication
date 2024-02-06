@@ -101,6 +101,6 @@ public class PayPalServiceImpl {
     }
     
       private String generateUniqueRequestId() {
-        return UUID.randomUUID().toString();
-    }
-}
+        return UUID.randomUUID().toString(); // Making a unique pay pal request Id for each purchase made by the same user, otherwise 
+    }					     // pay pal refuses to process next purchase for logged on user because Request_Id is used
+}					     // with the first purchase
