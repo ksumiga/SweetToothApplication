@@ -196,12 +196,12 @@ public class CartAndPaymentController {
     
     List<PurchaseHistory> purchaseHistoryList = historyService.findAllPurchases();
     Map<String, List<PurchaseHistory>> groupedHistory = purchaseHistoryList.stream()
-            .collect(Collectors.groupingBy(purchase -> purchase.getUser().getEmail()));
+            .collect(Collectors.groupingBy(purchase -> purchase.getUser().getEmail())); //display purchase details of each purchase made for a user email
 
     Map<String, Double> userTotalAmounts = groupedHistory.entrySet().stream()
             .collect(Collectors.toMap(
                     Map.Entry::getKey,
-                    entry -> entry.getValue().stream().mapToDouble(PurchaseHistory::getTotalAmount).sum()
+                    entry -> entry.getValue().stream().mapToDouble(PurchaseHistory::getTotalAmount).sum() //total sum of all purchases made for a single user
             ));
 
     model.addAttribute("groupedHistory", groupedHistory);
